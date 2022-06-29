@@ -3,7 +3,7 @@ iters: 10000
 
 train_dataset:
   type: Dataset
-  dataset_root: data/chaotian-img1.0
+  dataset_root: data/skyimg1.0
   transforms:
     - type: ResizeStepScaling
       min_scale_factor: 0.5
@@ -18,18 +18,18 @@ train_dataset:
       saturation_range: 0.4
     - type: Normalize
   mode: train
-  train_path: data/chaotian-img1.0/train.txt
-  num_classes: 2
+  train_path: data/skyimg1.0/train.txt
+  num_classes: 4
 
 
 val_dataset:
   type: Dataset
-  dataset_root: data/chaotian-img1.0
+  dataset_root: data/skyimg1.0
   transforms:
     - type: Normalize
   mode: val
-  val_path: data/chaotian-img1.0/val.txt
-  num_classes: 2
+  val_path: data/skyimg1.0/val.txt
+  num_classes: 4
 
 
 

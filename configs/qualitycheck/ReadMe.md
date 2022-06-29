@@ -5,14 +5,18 @@ all version info by qualitycheck datasets
 | model       | version | epoch | dataSet       | inference dir                        | onnx dir                        |
 | ----------- | ------- | --------------- | ------------- | ------------------------------------ | ------------------------------- |
 | ppliteseg | v1.0    | e100   | img   | inference_qc            | pp_liteseg.onnx  |
-| deeplabv3p | v1.0  | e100   | img | inference_qc | deeplabv3p_qc_1.0.onnx
+| deeplabv3p | v1.0  | e100   | skyimg1.0 | inference_qc | deeplabv3p_qc_1.0.onnx
+
 
 
 ### Model export and convert
 
 ```bash
+# data convert
+python tools/split_dataset_list.py ./data/skyimg1.0 ./ label --split 0.6 0.2 0.2 --format jpg png --label_class 'sky' 'tree' 'building'
+
 # train
-python train.py        --config configs/qualitycheck/deeplabv3p_resnet50_os8_qualitycheck_512x512_80k.yml       --use_vdl        --save_interval 500        --save_dir output
+python train.py        --config configs/qualitycheck/deeplabv3p_resnet50_os8_qualitycheck_512x512_80k.yml       --use_vdl        --save_interval 500        --save_dir output_qc
 
 #val
 python val.py    --config configs/qualitycheck/deeplabv3p_resnet50_os8_qualitycheck_512x512_80k.yml        --model_path output_qc/iter_100/model.pdparams
