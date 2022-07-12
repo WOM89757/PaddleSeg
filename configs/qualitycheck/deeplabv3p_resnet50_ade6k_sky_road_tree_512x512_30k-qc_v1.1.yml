@@ -1,0 +1,20 @@
+_base_: '../_base_/ade20k_sky_road_tree.yml'
+
+batch_size: 16
+iters: 1000
+
+model:
+  type: DeepLabV3P
+  backbone:
+    type: ResNet50_vd
+    output_stride: 8
+    multi_grid: [1, 2, 4]
+    pretrained: https://bj.bcebos.com/paddleseg/dygraph/resnet50_vd_ssld_v2.tar.gz
+
+  backbone_indices: [0, 3]
+  num_classes: 3
+  aspp_ratios: [1, 12, 24, 36]
+  aspp_out_channels: 256
+  align_corners: False
+  # pretrained: null
+  pretrained: ./models/ade20k/paddle/80k_best_model/model.pdparams
