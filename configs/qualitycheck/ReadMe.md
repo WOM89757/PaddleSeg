@@ -12,11 +12,11 @@
 
 #### ADEChallengeData2016_Sky_Road_Tree
 
-| Model | Backbone | Resolution | Training Iters | mIoU | Acc | Links | FTP Location |
+| Model | Backbone | Resolution | Training Iters | mIoU | Acc | Links | FTP Location | 
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |DeepLabV3P|ResNet50_OS8|512x512|30000|17.92%|82.56%|[model](ftp://192.168.2.23:9021:/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.pdparams) &#124; [log](/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.log.tgz) | /wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.pdparams |
-|DeepLabV3P|ResNet50_OS8|512x512|2000|96.45%|98.18%|[config](./deeplabv3p_resnet50_ade20k_sky_road_tree_512x512_30k-qc_v1.1.yml) &#124;[model](ftp://192.168.2.23:9021:/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.pdparams) &#124; [log](/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.log.tgz) | /wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.pdparams |
-|DeepLabV3P|ResNet50_OS8|512x512|1000|97.14%|98.51%|[config](./deeplabv3p_resnet50_ade20k_sky_road_tree_512x512_30k-qc_v1.1.yml) &#124;[model](ftp://192.168.2.23:9021:/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.pdparams) &#124; [log](/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.log.tgz) | /wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.pdparams |
+|DeepLabV3P|ResNet50_OS8|512x512|2000|96.45%|98.18%|[config](./deeplabv3p_resnet50_ade6k_sky_road_tree_512x512_30k-qc_v1.1.yml) &#124;[model](ftp://192.168.2.23:9021:/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade6k_80k.pdparams) &#124; [log](/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.log.tgz) | /wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.pdparams |
+|DeepLabV3P|ResNet50_OS8|512x512|1000|97.14%|98.51%|[config](./deeplabv3p_resnet50_ade20k_sky_road_tree_512x512_30k-qc_v1.1.yml) &#124;[model](ftp://192.168.2.23:9021:/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade6k_80k.pdparams) &#124; [log](/wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.log.tgz) | /wangmao/models/segmentation/ade20k/paddle/deeplabv3p_ade20k_80k.pdparams |
 
 
 mIoU: 0.9602 Acc: 0.9798 
@@ -31,6 +31,15 @@ mIoU: 0.9678 Acc: 0.9835
 | deeplabv3+ | v0.1  | 64   | ADEChallengeData2016 | /wangmao/project/qualitycheck/deeplabv3plus.onnx |
 | deeplabv3p | v1.0  | 64   | ADEChallengeData2016 | /wangmao/project/qualitycheck/deeplabv3p_qc_1.0.onnx |
 | deeplabv3p | v1.1  | 32   | ADEChallengeData2016_Sky_Road_Tree | /wangmao/project/qualitycheck/deeplabv3p_qc_1.1.onnx    |
+
+
+## Infer Test
+
+| model       | version | infer num       | sum infer time(ms)       |   infer time(ms) | fps|              |
+| ----------- | ------- |  ------------- | ------------------------------------ | ----|--- | -----|
+| deeplabv3+ | v0.1  |  100 | 23007.2109         | 230.07  | 4.35 |
+
+
 
 ### Datasets Info
 
